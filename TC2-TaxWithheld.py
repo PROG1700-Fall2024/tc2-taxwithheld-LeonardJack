@@ -13,8 +13,16 @@
 def main():
     # YOUR CODE STARTS HERE, each line must be indented (one tab)
 
+    weeklySalary = float(input("Enter the full amount of your weekly salary: ")) #input for weekly salary
+    dependants = int(input("Enter how many dependants you have: ")) #input for dependants
 
+    provTax = weeklySalary * 0.06   #calculates provincial tax
+    fedTax = weeklySalary * 0.25    #calculates federal tax
+    depDeduction = dependants * (weeklySalary * 0.02)   #calculates dependants deduction
+    totalWithheld = (provTax + fedTax) - depDeduction   #calculates total amount of money withheld
+    totalTake = weeklySalary - totalWithheld    #calculates weekly salary minus total deductions
 
+    print("Provincial Tax Withheld: ${0:.2f}\nFederal Tax Withheld: ${1:.2f}\nDependent Deduction for {2} dependents: ${3:.2f}\nTotal Withheld: ${4:.2f}\nTotal Take-Home Pay: ${5:.2f}".format(provTax,fedTax,dependants,depDeduction,totalWithheld,totalTake)) #formatted print statement using newline command and .format to inject our values
 
 
 
